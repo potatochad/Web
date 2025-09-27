@@ -54,7 +54,7 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
+    lateinit var find: ActivityMainBinding
     private var printJob: PrintJob? = null
 
     companion object {
@@ -79,14 +79,14 @@ class MainActivity : AppCompatActivity() {
             window.attributes.layoutInDisplayCutoutMode =
                 WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
         }
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        find = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         getAllBookmarks()
 
         tabsList.add(Tab("Home", HomeFragment()))
-        binding.myPager.adapter = TabsAdapter(supportFragmentManager, lifecycle)
-        binding.myPager.isUserInputEnabled = false
+        find.myPager.adapter = TabsAdapter(supportFragmentManager, lifecycle)
+        find.myPager.isUserInputEnabled = false
         myPager = binding.myPager
         tabsBtn = binding.tabsBtn
 
